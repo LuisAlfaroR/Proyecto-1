@@ -9,7 +9,8 @@ module TestBench_Seleccion_corrientes;
 	reg rst;
 
 	// Outputs
-	wire [9:0] I;
+	wire [6:0] I;
+	wire [9:0] I_deco;
 
 	// Instantiate the Unit Under Test (UUT)
 	Seleccion_Corriente uut (
@@ -17,7 +18,8 @@ module TestBench_Seleccion_corrientes;
 		.clk(clk), 
 		.ENi(ENi), 
 		.rst(rst), 
-		.I(I)
+		.I(I),
+		.I_deco(I_deco)
 	);
 	
 	always begin #5;clk=~clk;end
@@ -28,13 +30,13 @@ module TestBench_Seleccion_corrientes;
 		clk = 0;
 		ENi = 1;
 		rst = 1;
-		#100;
+		#20000000;
       rst=0;
-		#100;
+		#20000000;
 		botones=2'b10;
-		#100;
+		#20000000;
 		botones=2'b01;
-		#100;
+		#20000000;
 		$finish;
 	end
       

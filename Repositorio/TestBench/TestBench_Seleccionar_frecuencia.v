@@ -9,7 +9,7 @@ module TestBench_Seleccionar_frecuencia;
 	reg [1:0] botones;
 
 	// Outputs
-	wire [10:0] f;
+	wire [5:0] f;
 	wire [7:0] f_deco;
 
 	// Instantiate the Unit Under Test (UUT)
@@ -32,13 +32,13 @@ module TestBench_Seleccionar_frecuencia;
 		rst = 1;
 		clk = 0;
 		botones = 0;
-		#100;
+		#20000000;
 		rst=0;
-		#100;
+		#20000000;
 		botones=2'b10;
-		#100;
+		#20000000;
 		botones=2'b01;
-		#100;
+		#20000000;
 		$finish;
 
 	end
